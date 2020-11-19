@@ -1,0 +1,8 @@
+*.hi
+*.o
+/calc2/calc2
+/tex/**
+/web/**
+/publish/**
+/publish/mathjax
+.DS_Store

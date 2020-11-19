@@ -1,0 +1,3 @@
+ErrorDocument 403 /missing.html
+ErrorDocument 404 /missing.html
+Options -Indexes

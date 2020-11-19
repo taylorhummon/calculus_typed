@@ -1,0 +1,90 @@
+
+# General #
+
+
+
+# HTML Output #
+
+
+
+# PDF output #
+
+`pdflatex` complains about image PDFs declaring a "page group" of their own.
+
+Differences between formats.
+
+* Chapter titles use a period as a separator in Web output.
+* What to call the Top/Introduction page.
+
+
+
+# Jax #
+
+Look through `jaxconfig`.
+
+
+
+# Haskell #
+
+There are some math commands, eg. `\Vector` and `\Ruler`, that must
+take two arguments, but it would be nice if they could drop their
+braces when an argument is empty.
+
+Allow `&` and `\\` to appear in unsafes.
+
+Can I remove system calls?
+
+Or at least do better at checking the system call exit codes?
+
+
+
+# Upstream Bugs #
+
+Look into MathJax alignment / spacing bug.
+
+
+
+# Good Habits #
+
+Spell check!
+
+Audit `Math.hs`.
+
+Checkup on `\unsafe` usage.
+
+Look through comments in book sources.
+
+Look through comments in TeX files.
+
+Look carefully at output of a `calc2web-rebuild`.
+
+
+
+# Longer Term #
+
+Consider using a different math font.
+
+What can I do about line widths in PDF output that display inconsistently?
+
+Allow link anchors within pages?
+
+Look into making jax load faster - can I pre-generate math as images?
+
+Consider making a custom `\mapsfrom` command.
+
+Make more mobile friendly!
+
+Consider using a shiv for IE support. (Or block old IE.)
+
+Search engine optimization - page descriptions?
+
+Look into MathML.
+
+JavaScript effects?
+
+Do I want to color in all of my surfaces?
+
+Look at overfull warnings in `pdflatex` output.
+
+Upgrade MathJax.
+

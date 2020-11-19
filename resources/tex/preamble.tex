@@ -1,0 +1,131 @@
+
+%% fleqn: left aligned equations
+\documentclass[11pt,oneside,fleqn]{book}
+
+%% ams latex
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+
+%% set page geometry
+\usepackage[%
+%% showframe,%
+paperwidth=7in,%
+paperheight=9in,%
+top=0.75in,%
+left=0.5in,%
+bottom=0.75in,%
+right=0.5in%
+]{geometry}
+
+%% fancy header
+%% this should come after the geometry package
+\usepackage{fancyhdr}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{}
+\fancyhead[R]{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%% format parts, chapters, sections, etc
+\usepackage[medium,compact,center]{titlesec}
+%% place each section on new page
+\newcommand{\sectionbreak}{\clearpage}
+%% don't number subsections
+\setcounter{secnumdepth}{1}
+
+%% adjust margins using \begin{addmargin}
+\usepackage{scrextend}
+% indent length plain text
+\newlength{\plainGroupIndent}
+\setlength{\plainGroupIndent}{1em}
+% indent length for fancy groupings
+\newlength{\groupingIndent}
+\setlength{\groupingIndent}{1em}
+
+%% CSS-style groups
+\usepackage{longfbox}
+
+%% vertical space between paragraphs
+\usepackage{parskip}
+%% make a record of the parskip so we can restore it in minipage
+\newlength{\parskipRecord}
+\setlength{\parskipRecord}{\parskip}%
+
+%% make a record of the  baseline skip
+\newlength{\baselineskipRecord}
+\setlength{\baselineskipRecord}{13.6pt}%
+
+%% custom vertical skips
+\newlength{\skipdipson}
+
+%% layoutTB
+\usepackage{enumitem}
+\setlist[description]{%
+font=\normalfont,%
+leftmargin=2em%
+}
+
+%% lengths for layoutBF and layoutTBF
+\newlength{\leftBF}
+\setlength{\leftBF}{245pt}
+\newlength{\rightBF}
+\setlength{\rightBF}{145pt}
+\newlength{\leftTBF}
+\setlength{\leftTBF}{225pt}
+\newlength{\rightTBF}
+\setlength{\rightTBF}{145pt}
+
+
+%% fancy tables
+\usepackage{tabu}
+%% tables that can break across pages
+\usepackage{longtable}
+%% include some space between rows in a table
+\tabulinesep=3pt
+%% struts for long tables
+\newcommand\strutB{\rule[-1ex]{0pt}{0pt}}
+\newcommand\strutT{\rule{0pt}{2ex}}
+%% %% colorful tables
+%% \usepackage{colortbl}
+%% \definecolor{tableHeaderGray}{RGB}{237,231,253}
+
+%% images
+\usepackage{graphicx}
+
+%% use type 1 font encoding
+\usepackage[T1]{fontenc}
+
+%% use helvetica
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[scaled=.90]{helvet}
+
+%% enable better looking underline as \uline
+\usepackage[normalem]{ulem}
+
+%% try not to place small amounts of text on their own page
+\widowpenalty=500
+\clubpenalty=500
+
+
+
+%% %% this environment is useful for visualizing minipages
+%% \newsavebox{\fmbox}
+%% \newenvironment{fmpage}[1]
+%% {\begin{lrbox}{\fmbox}\begin{minipage}{#1}}
+%% {\end{minipage}\end{lrbox}\fbox{\usebox{\fmbox}}}
+
+
+
+%% this package should be loaded last!
+\usepackage{hyperref}
+\hypersetup{%
+bookmarks=true,%
+bookmarksopen=true,%
+bookmarksopenlevel=0,%
+colorlinks=true,%
+linkcolor=blue,%
+urlcolor=blue,%
+pdfauthor={Ben Hummon},%
+pdftitle={Calculus Typed}%
+}

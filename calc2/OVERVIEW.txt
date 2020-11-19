@@ -1,0 +1,145 @@
+
+***** Overview of Data *****
+
+Contents
+  defines:
+    Contents (Contents)
+    ContentsLine (ContentsLine)
+
+
+Info
+  defines:
+    Info (Info)
+    Run (RunTex, RunWeb, RunWebRebuild, RunWebUpload)
+    PageInfo (PageInfo)
+    PageType (PtTop, PtPart, PtChapter, ...)
+
+  depends:
+    Location
+
+
+Page
+  defines:
+    Page (Page)
+    SubPage (SubPage)
+    
+  depends:
+    Group
+    Location
+    Phrase
+
+
+Group
+  defines:
+    Groups
+    Group (Group)
+    GroupType (GtPlain, GtDefinition, GtFormula, ...)
+
+  depends:
+    Layout
+    Block
+
+
+Layout
+  defines:
+    Layouts
+    Layout (LtPlain, LtTB, LtBF, LtTBF)
+    EntrysTB
+    EntrysBF
+    EntrysTBF
+    EntryTB (EntryTB)
+    EntryBF (EntryBF)
+    EntryTBF (EntryTBF)
+    Title
+    Body
+    Figure (FiImage, FiTable)
+
+  depends:
+    Passage
+    Block
+    Writing
+
+
+Passage
+  defines:
+    Passages
+    Passage (PaParagraph, PaTable)
+    TableLength (TableShort, TableLong)
+    TableFormat
+    Alignment (AlignLeft, AlignCenter, AlignRight)
+    TableRow
+    TableCell
+
+  depends:
+    Matter
+    Block
+    Writing
+
+
+Matter
+  defines:
+    Matters
+    Matter (MaPlain, MaMathLines, MaFigure, ...)
+    Item (Item)
+
+  depends:
+    Block
+    Writing
+    Math
+    Location
+
+
+Block
+  defines:
+    Block a (Block)
+    Hint (HiNone, HiSpace, HiPageBreak)
+
+  depends:
+
+
+Writing
+  defines:
+    Writing
+    WritingElem (WePlain, WeEmphasis)
+    Text
+    TextElem (TePlain, TeMath, TeLink)
+
+  depends:
+    Math
+    Link
+    Phrase
+
+
+Math
+  defines:
+    MathLines
+    MathLine
+    Math
+    MathElem (MeUnsafe, MeText, MeVariable, MeNumber,
+              MeSymbol, MeSpace, MeCommand, MeCommandOpt,
+              MeBeginEnd, MeSubScript, MeSuperScript)
+
+  depends:
+    Phrase
+
+
+Link
+  defines:
+    Link (LkExternal, LkInternal, LkString, LkFail)
+
+  depends:
+    Location
+    Phrase
+
+
+Phrase
+  defines:
+    Phrase
+    PhraseElem (PeWord, PeNumber, PePunctuation, PeSpace)
+
+
+Location
+  defines:
+    Location
+
+
