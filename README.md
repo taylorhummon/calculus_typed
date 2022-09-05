@@ -3,9 +3,8 @@
 
 In this repository you'll find the `calc2` software used to build
 the "Calculus Typed" textbook. You can check out the textbook at
-[https://www.benhummon.com/book/](https://www.benhummon.com/book/).
-The book's source files are available
-in a separate companion repository, `calculus_typed_book`.
+[https://www.taylorhummon.com/book/](https://www.taylorhummon.com/book/).
+The book's source files are available in a separate companion repository, `calculus_typed_book`.
 
 The book's source is stored in files with the extension `.calc`. These files
 are written in a simple markup language designed specifically for the particular
@@ -18,7 +17,7 @@ the textbook (`.html`, `.js`, and `.css`), and
 
 ## Setup ##
 
-To build this software, you'll need to install the [Glasgow Haskell Compiler](https://www.haskell.org/ghc/) at version 8.0 or higher. I recommend getting the [Haskell Platform](https://www.haskell.org/platform/) which includes GHC as well as several commonly used Haskell tools and packages.
+To build this software, you'll need to install the [Glasgow Haskell Compiler](https://www.haskell.org/ghc/) at version 8.0 or higher. I recommend using [GHCup](https://www.haskell.org/ghcup/) to install the compiler and several commonly used Haskell tools.
 
 You'll also need [Mathjax](https://www.mathjax.org/) 2.7.7. We use this package
 for pretty math output on the web.

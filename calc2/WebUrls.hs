@@ -32,7 +32,7 @@ domain info
        RunWebRebuild
          -> "/ct/"
        RunWebPublish
-         -> "https://calculustyped.benhummon.com/"
+         -> "https://calculustyped.taylorhummon.com/"
 
 
 urlLanding :: Info -> Maybe Url
@@ -45,7 +45,7 @@ urlLanding info
        RunWebRebuild
          -> Nothing
        RunWebPublish
-         -> Just "https://www.benhummon.com/book/"
+         -> Just "https://www.taylorhummon.com/book/"
 
 
 urlStyleSheet :: Info -> Url
@@ -86,4 +86,3 @@ urlFromLoc (_ : rest)
 urlImg :: Info -> Location -> String -> Url
 urlImg i loc file
   = urlLink i loc ++ file ++ ".svg"
-

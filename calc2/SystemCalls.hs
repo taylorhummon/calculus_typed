@@ -9,7 +9,7 @@ import System.Exit (ExitCode(..))
 
 topDir :: String
 topDir
-  = "/Users/ben/else/projects/calculus_typed/"   -- TODO: move this to a config file
+  = "/Users/taylor/else/projects/calculus_typed/"   -- TODO: move this to a config file
 
 
 removeDir :: String -> String

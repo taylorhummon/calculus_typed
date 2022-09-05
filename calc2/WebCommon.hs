@@ -70,7 +70,7 @@ htmlMeta :: Html
 htmlMeta
   = concat ["<meta charset=", quote, "UTF-8", quote, ">", nl,
             "<meta name=", quote, "author", quote,
-            " content=", quote, "Ben Hummon", quote, ">", nl]
+            " content=", quote, "Taylor Hummon", quote, ">", nl]
 
 htmlFavIcon :: Html
 htmlFavIcon
@@ -92,7 +92,7 @@ htmlFavIcon
             " color=", quote, "#5bbad5", quote, ">", nl,
             "<meta name=", quote, "theme-color", quote,
             " content=", quote, "#ffffff", quote, ">", nl]
-    
+
 
 htmlScriptJax :: Info -> Html
 htmlScriptJax i
@@ -141,4 +141,3 @@ bookTitle i
          -> title
        _
          -> ""
-
