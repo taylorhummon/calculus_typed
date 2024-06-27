@@ -3,7 +3,7 @@
 
 In this repository you'll find the `calc2` software used to build
 the "Calculus Typed" textbook. You can check out the textbook at
-[https://www.taylorhummon.com/book/](https://www.taylorhummon.com/book/).
+[https://calculustyped.taylorhummon.com/](https://calculustyped.taylorhummon.com/).
 The book's source files are available in a separate companion repository, `calculus_typed_book`.
 
 The book's source is stored in files with the extension `.calc`. These files
