@@ -44,10 +44,6 @@ instance Applicative (Excepted) where
 
 instance Monad (Excepted) where
 
-  -- return :: a -> Excepted a
-  return x
-    = Value x
-
   -- >>= :: Excepted a -> (a -> Excepted b) -> Excepted b
   (Value x) >>= g
     = g x
