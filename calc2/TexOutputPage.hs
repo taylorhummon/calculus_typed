@@ -15,14 +15,14 @@ import System.IO (Handle)
 
 
 outputPage :: Info -> Handle -> Page -> IO ()
-outputPage i handle (page @ (Page loc _ _))
+outputPage i handle (page@(Page loc _ _))
   = do _ <- outputImages page
        writePage loc handle (buildPage i page)
        return ()
 
 
 outputImages :: Page -> IO ()
-outputImages (page @ (Page loc _ _))
+outputImages (page@(Page loc _ _))
   =  do ensureImageDir loc
         _ <- mapM (outputImage loc) (getImages page)
         return ()
@@ -35,4 +35,3 @@ outputImage loc image
          then do _ <- writeImage loc image
                  return ()
          else do return ()
-

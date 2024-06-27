@@ -71,7 +71,7 @@ breakPageId str
 breakPageId' :: String -> String -> Maybe (String, String)
 breakPageId' _ ""
   = Nothing
-breakPageId' acc (rest @ (' ' : _))
+breakPageId' acc (rest@(' ' : _))
   = Just (reverse acc, rest)
 breakPageId' acc (c : cs)
   = breakPageId' (c : acc) cs
@@ -130,5 +130,3 @@ assertUnique [the]
   = return the
 assertUnique _
   = exitParsing ("Must have a unique top-level location.")
-
-

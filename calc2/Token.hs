@@ -46,7 +46,7 @@ addLineNumbers
 
 
 removeComment :: (Int, String) -> (Int, String)
-removeComment (ln @ (_, str))
+removeComment (ln@(_, str))
   = removeComment' (elemIndices '%' str) ln
 
 removeComment' :: [Int] -> (Int, String) -> (Int, String)
@@ -186,4 +186,3 @@ tokenLine (TnCommand n _)
   = n
 tokenLine (TnSpace n)
   = n
-

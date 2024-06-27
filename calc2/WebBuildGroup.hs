@@ -19,9 +19,9 @@ buildGroups i
 
 
 buildGroup :: Info -> Block Group -> Html
-buildGroup i (b @ (Block _ _ (Group GtPlain layouts)))
+buildGroup i (b@(Block _ _ (Group GtPlain layouts)))
   = buildDiv i "group plain" b (buildLayouts i layouts)
-buildGroup i (b @ (Block _ _ (Group gt layouts)))
+buildGroup i (b@(Block _ _ (Group gt layouts)))
   = case lookup gt fancyGroupTypes
     of Just (name, pretty)
          -> buildDiv i ("group" ++ " " ++ name) b (buildInnards i pretty layouts)
@@ -40,4 +40,3 @@ buildTitle pretty
   = concat ["<div class=", quote, "head", quote, ">",
             pretty,
             "</div>", nl]
-

@@ -31,19 +31,19 @@ instance Functor (Excepted) where
 
 
 instance Applicative (Excepted) where
-  
+
   -- (<*>) :: Excepted (a -> b) -> (Excepted a -> Excepted b)
   Value f <*> Value x = Value (f x)
   Except e <*> _ = Except e
   _ <*> Except e = Except e
-  
+
   -- pure :: a -> Excepted a
   pure x
     = Value x
-  
+
 
 instance Monad (Excepted) where
-  
+
   -- return :: a -> Excepted a
   return x
     = Value x

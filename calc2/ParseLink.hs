@@ -201,7 +201,7 @@ parseKeyVal
 
 
 parseKeyVal' :: [Token] -> Excepted (String, String)
-parseKeyVal' ((t @ (TnWord _ key)) : ts)
+parseKeyVal' ((t@(TnWord _ key)) : ts)
   = case dropSpaceToks ts
     of (TnSymbol _ '=' : rest)
          -> do val <- parseVal rest
@@ -225,5 +225,3 @@ parseVal' (t : _)
   = throw (tokenException t "Could not parse value in link.")
 parseVal' []
   = throw (ExceptMessage "Could not parse value in link.")
-
-

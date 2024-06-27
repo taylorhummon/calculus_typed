@@ -125,7 +125,7 @@ grabMeSpace _
 
 
 grabMeCommand :: [Token] -> Grabbed MathElem
-grabMeCommand (tokens @ (TnCommand _ str : _))
+grabMeCommand (tokens@(TnCommand _ str : _))
   = case lookup str commands
     of Just k
          -> grabMeCommand' str k tokens
@@ -148,7 +148,7 @@ grabMeCommand' str nargs tokens
 
 
 grabMeCommandOpt :: [Token] -> Grabbed MathElem
-grabMeCommandOpt (tokens @ (TnCommand _ str : _))
+grabMeCommandOpt (tokens@(TnCommand _ str : _))
   = case lookup str commandOpts
     of Just k
          -> grabMeCommandOpt' str k tokens
@@ -231,5 +231,3 @@ grabSingle (TnSymbol n c : ts)
   = return (Grabbed (TnSymbol n c) ts)
 grabSingle _
   = return Missed
-
-

@@ -105,7 +105,7 @@ breakOnGrab' :: ([Token] -> Grabbed a) ->
                 [Token] -> [Token] -> Excepted ([Token], [Token])
 breakOnGrab' _ acc []
   = return (reverse acc, [])
-breakOnGrab' grabber acc (tokens @ (t : ts))
+breakOnGrab' grabber acc (tokens@(t : ts))
   = caseGrabbed (grabber tokens)
     -- Missed
     (breakOnGrab' grabber (t : acc) ts)
@@ -124,7 +124,7 @@ breakOnGrabLoc' :: (Location -> [Token] -> Grabbed a) ->
                    Location -> [Token] -> [Token] -> Excepted ([Token], [Token])
 breakOnGrabLoc' _ _ acc []
   = return (reverse acc, [])
-breakOnGrabLoc' grabber loc acc (tokens @ (t : ts))
+breakOnGrabLoc' grabber loc acc (tokens@(t : ts))
   = caseGrabbed (grabber loc tokens)
     -- Missed
     (breakOnGrabLoc' grabber loc (t : acc) ts)
@@ -279,7 +279,7 @@ grabBeginEnd str tokens
 spanBeginEnd :: String -> [Token] -> [Token] -> Excepted (Maybe [Token], [Token], [Token])
 spanBeginEnd _ _ []
   = throw (ExceptNoEndOfParens)
-spanBeginEnd str acc (tokens @ (t : ts))
+spanBeginEnd str acc (tokens@(t : ts))
   = caseGrabbed (grabEnd str tokens)
      -- Missed
      (spanBeginEnd str (t : acc) ts)
@@ -334,11 +334,9 @@ grabParens _ 0 (_ : acc) tokens
   = return (Grabbed (reverse acc) tokens)
 grabParens _ _ _ []
   = throw ExceptNoEndOfParens
-grabParens (open, close) depth acc (t @ (TnSymbol _ bt) : ts)
+grabParens (open, close) depth acc (t@(TnSymbol _ bt) : ts)
   | bt == open   = grabParens (open, close) (depth + 1) (t : acc) ts
   | bt == close  = grabParens (open, close) (depth - 1) (t : acc) ts
   | otherwise    = grabParens (open, close) depth       (t : acc) ts
 grabParens (open, close) depth acc (t : ts)
   = grabParens (open, close) depth (t : acc) ts
-
-

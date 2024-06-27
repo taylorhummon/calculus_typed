@@ -55,7 +55,7 @@ prevLoc info loc
 prevLoc' :: Location -> [Location] -> Maybe Location
 prevLoc' _ [_]
   = Nothing
-prevLoc' loc (p : (rest @ (loc' : _)))
+prevLoc' loc (p : (rest@(loc' : _)))
   | loc == loc' = Just p
   | otherwise   = prevLoc' loc rest
 prevLoc' _ []
@@ -78,7 +78,7 @@ nextLoc info loc
 nextLoc' :: Location -> [Location] -> Maybe Location
 nextLoc' _ [_]
   = Nothing
-nextLoc' loc (loc' : (rest @ (n : _)))
+nextLoc' loc (loc' : (rest@(n : _)))
   | loc == loc' = Just n
   | otherwise   = nextLoc' loc rest
 nextLoc' _ []
@@ -174,4 +174,3 @@ topLocation' (_ : rest)
   = topLocation' rest
 topLocation' []
   = error "Top page is missing!"
-

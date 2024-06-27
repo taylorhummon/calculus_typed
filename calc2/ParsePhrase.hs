@@ -29,7 +29,7 @@ grabPhraseElem (TnWord _ str : ts)
   = return (Grabbed (PeWord str) ts)
 grabPhraseElem (TnNumber _ str : ts)
   = return (Grabbed (PeNumber str) ts)
-grabPhraseElem (tokens @ (TnSymbol _ _ : _))
+grabPhraseElem (tokens@(TnSymbol _ _ : _))
   = grabPunctuation tokens
 grabPhraseElem (TnSpace _ : ts)
   = return (Grabbed PeSpace ts)
@@ -53,4 +53,3 @@ grabPunctuation (TnSymbol _ symb : ts)
     = return Missed
 grabPunctuation _
   = return Missed
-

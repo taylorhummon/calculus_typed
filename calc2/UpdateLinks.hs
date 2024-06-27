@@ -237,12 +237,10 @@ inLink info loc (LkTarget loc')
             return (LkString loc' title)
     else do messageBadLink loc loc'
             return (LkFail [])
-inLink info loc (link @ (LkInternal loc' phrase))
+inLink info loc (link@(LkInternal loc' phrase))
   = if validLocation info loc'
     then return link
     else do messageBadLink loc loc'
             return (LkFail phrase)
 inLink _ _ link
   = return link
-
-

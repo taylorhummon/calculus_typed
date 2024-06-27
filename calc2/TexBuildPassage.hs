@@ -25,7 +25,7 @@ buildPassages i passages
 
 
 buildBlockPassage :: Info -> Block Passage -> Tex
-buildBlockPassage i (b @ (Block _ _ passage))
+buildBlockPassage i (b@(Block _ _ passage))
   = buildBlock i b (buildPassage i passage)
 
 
@@ -119,4 +119,3 @@ buildCells i (cell : rest)
   = concat [buildText i cell,
             nl, "&", nl,
             buildCells i rest]
-

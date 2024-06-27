@@ -16,7 +16,7 @@ import Info (fetchPageInfo, formatTitle)
 
 
 buildPage :: Info -> Page -> Html
-buildPage i (page @ (Page loc _ subpages))
+buildPage i (page@(Page loc _ subpages))
   = concat [buildNavigation i Header page,
             header i loc,
             buildToc i loc,
@@ -38,5 +38,3 @@ buildSubPage i (SubPage (Just title) groups)
             buildGroups i groups]
 buildSubPage i (SubPage Nothing groups)
   = buildGroups i groups
-
-

@@ -24,7 +24,7 @@ buildMatters i matters
 
 
 buildBlockMatter :: Info -> Block Matter -> Tex
-buildBlockMatter i (b @ (Block _ _ matter))
+buildBlockMatter i (b@(Block _ _ matter))
   = buildBlockSkip i b (buildMatter i matter)
 
 
@@ -65,7 +65,7 @@ buildItems i blocks
 
 
 buildBlockItem :: Info -> Block Item -> Tex
-buildBlockItem i (b @ (Block _ _ item))
+buildBlockItem i (b@(Block _ _ item))
   = buildBlock i b (buildItem i item)
 
 
@@ -117,5 +117,3 @@ buildMathCell _ (mathLeft, mathRight)
 
 amp :: Tex
 amp = "&"
-
-

@@ -12,7 +12,7 @@ import Info (formatTitle)
 
 
 buildEntry :: Info -> PageInfo -> Html
-buildEntry info (pageInfo @ (PageInfo loc _ _))
+buildEntry info (pageInfo@(PageInfo loc _ _))
   = buildLink info (LkString loc title)
   where title = formatTitle pageInfo
 
@@ -24,4 +24,3 @@ subLocation _ []
   = False
 subLocation (pageId : rest) (pageId' : rest')
   = pageId == pageId' && subLocation rest rest'
-

@@ -13,7 +13,7 @@ import WebBuildPage (buildPage)
 
 
 outputPage :: Info -> Page -> IO ()
-outputPage i (page @ (Page loc _ _))
+outputPage i (page@(Page loc _ _))
   = do ensurePageDir i loc
        b1 <- outputImages i page
        b2 <- isPageOutDated i loc
@@ -24,7 +24,7 @@ outputPage i (page @ (Page loc _ _))
 
 
 outputImages :: Info -> Page -> IO Bool
-outputImages i (page @ (Page loc _ _))
+outputImages i (page@(Page loc _ _))
   =  do ensureImageDir i loc
         bools <- mapM (outputImage i loc) (getImages page)
         return (and bools)
@@ -36,4 +36,3 @@ outputImage i loc image
        if b
          then writeImage i loc image
          else return True
-

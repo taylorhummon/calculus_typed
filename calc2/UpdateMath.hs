@@ -212,7 +212,7 @@ inMathCell (mathLeft, mathRight)
 
 inBlockItem :: Block Item -> Block Item
 inBlockItem
-  = acrossBlock inItem 
+  = acrossBlock inItem
 
 
 inItem :: Item -> Item
@@ -243,22 +243,22 @@ inMath
 
 
 inMathElem :: MathElem -> Math
-inMathElem (me @ (MeVariable _))
+inMathElem (me@(MeVariable _))
   = [me]
 
-inMathElem (me @ (MeNumber _))
+inMathElem (me@(MeNumber _))
   = [me]
 
 inMathElem (MeSymbol c)
   = transformSymbol c
 
-inMathElem (me @ MeSpace)
+inMathElem (me@MeSpace)
   = [me]
 
-inMathElem (me @ (MeText _))
+inMathElem (me@(MeText _))
   = [me]
 
-inMathElem (me @ (MeUnsafe _))
+inMathElem (me@(MeUnsafe _))
   = [me]
 
 inMathElem (MeSubScript math)
@@ -275,4 +275,3 @@ inMathElem (MeCommandOpt str maybeMath maths)
     where maybeMath' = case maybeMath
                        of Nothing   -> Nothing
                           Just math -> Just (inMath math)
-          

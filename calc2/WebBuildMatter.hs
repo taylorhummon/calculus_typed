@@ -20,15 +20,15 @@ buildMatters i
 
 
 buildMatter :: Info -> Block Matter -> Html
-buildMatter i (b @ (Block _ _ (MaPlain writing)))
+buildMatter i (b@(Block _ _ (MaPlain writing)))
   = buildDiv i "matter writing" b (buildWriting i writing)
-buildMatter i (b @ (Block _ _ (MaMathLines mathLines)))
+buildMatter i (b@(Block _ _ (MaMathLines mathLines)))
   = buildDiv i "matter math" b (buildMathLines i mathLines)
-buildMatter i (b @ (Block _ _ (MaImage image)))
+buildMatter i (b@(Block _ _ (MaImage image)))
   = buildDiv i "matter image" b (buildImage i image)
-buildMatter i (b @ (Block _ _ (MaItemize items)))
+buildMatter i (b@(Block _ _ (MaItemize items)))
   = buildDiv i "matter itemize" b (buildItemize i items)
-buildMatter i (b @ (Block _ _ (MaEnumerate items)))
+buildMatter i (b@(Block _ _ (MaEnumerate items)))
   = buildDiv i "matter enumerate" b (buildEnumerate i items)
 
 
@@ -52,7 +52,7 @@ buildEnumerate i items
 
 
 buildBlockItem :: Info -> Block Item -> Html
-buildBlockItem i (b @ (Block _ _ (Item matters)))
+buildBlockItem i (b@(Block _ _ (Item matters)))
   = buildTag i "li" b (buildMatters i matters)
 
 
@@ -96,5 +96,3 @@ buildMathCell _ (mathLeft, mathRight)
 
 amp :: Html
 amp = "&amp;"
-
-

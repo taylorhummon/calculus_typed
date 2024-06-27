@@ -27,7 +27,7 @@ buildLayouts i layouts
 
 
 buildBlockLayout :: Info -> Block Layout -> Tex
-buildBlockLayout i (b @ (Block _ _ layout))
+buildBlockLayout i (b@(Block _ _ layout))
   = buildBlock i b (buildLayout i layout)
 
 
@@ -67,7 +67,7 @@ buildLayout i (LtTBF entrys)
 
 
 buildBlockEntryTB :: Info -> Block EntryTB -> Tex
-buildBlockEntryTB i (b @ (Block _ _ entry))
+buildBlockEntryTB i (b@(Block _ _ entry))
   = buildBlock i b (buildEntryTB i entry)
 
 
@@ -85,7 +85,7 @@ buildEntryTB i (EntryTB bt bb)
 
 
 buildBlockEntryBF :: Info -> Block EntryBF -> Tex
-buildBlockEntryBF i (b @ (Block _ _ entry))
+buildBlockEntryBF i (b@(Block _ _ entry))
   = buildBlock i b (buildEntryBF i entry)
 
 
@@ -97,7 +97,7 @@ buildEntryBF i (EntryBF bb bf)
 
 
 buildBlockEntryTBF :: Info -> Block EntryTBF -> Tex
-buildBlockEntryTBF i (b @ (Block _ _ entry))
+buildBlockEntryTBF i (b@(Block _ _ entry))
   = buildBlock i b (buildEntryTBF i entry)
 
 
@@ -190,5 +190,3 @@ minipage SideRight str tex
             bs, "centering", pnl,
             tex,
             bs, "end{minipage}", pnl]
-
-

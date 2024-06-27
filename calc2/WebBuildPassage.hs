@@ -18,9 +18,9 @@ buildPassages i
 
 
 buildPassage :: Info -> Block Passage -> Html
-buildPassage i (b @ (Block _ _ (PaParagraph matters)))
+buildPassage i (b@(Block _ _ (PaParagraph matters)))
   = buildDiv i "passage paragraph" b (buildMatters i matters)
-buildPassage i (b @ (Block _ _ (PaTable t)))
+buildPassage i (b@(Block _ _ (PaTable t)))
   = case t
     of (Table TableShort _ _ _)
          -> buildDiv i "passage table short" b (buildTable i t)
@@ -71,4 +71,3 @@ alignClass AlignCenter
   = "center"
 alignClass AlignRight
   = "right"
-

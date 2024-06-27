@@ -28,7 +28,7 @@ ensureTemplate i str source target
 process :: Info -> String -> String
 process _ []
   = []
-process i str @ (c : cs)
+process i str@(c : cs)
   = case beginsWith "{DOMAIN}" str
     of Nothing
          -> c : process i cs
@@ -44,5 +44,3 @@ beginsWith (_ : _) []
 beginsWith (c : cs) (c' : cs')
   | c == c'   = beginsWith cs cs'
   | otherwise = Nothing
-
-  

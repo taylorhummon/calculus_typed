@@ -21,13 +21,13 @@ buildLayouts i
 
 
 buildLayout :: Info -> Block Layout -> Html
-buildLayout i (b @ (Block _ _ (LtPlain passages)))
+buildLayout i (b@(Block _ _ (LtPlain passages)))
   = buildDiv i "layout plain" b (buildPassages i passages)
-buildLayout i (b @ (Block _ _ (LtTB entrys)))
+buildLayout i (b@(Block _ _ (LtTB entrys)))
   = buildDiv i "layout titlebody" b (buildEntrysTB i entrys)
-buildLayout i (b @ (Block _ _ (LtBF entrys)))
+buildLayout i (b@(Block _ _ (LtBF entrys)))
   = buildDiv i "layout bodyfigure" b (buildEntrysBF i entrys)
-buildLayout i (b @ (Block _ _ (LtTBF entrys)))
+buildLayout i (b@(Block _ _ (LtTBF entrys)))
   = buildDiv i "layout titlebodyfigure" b (buildEntrysTBF i entrys)
 
 
@@ -37,9 +37,9 @@ buildEntrysTB i
 
 
 buildBlockEntryTB :: Info -> Block EntryTB -> Html
-buildBlockEntryTB i (b @ (Block _ _ entry))
+buildBlockEntryTB i (b@(Block _ _ entry))
   = buildDiv i "entry" b (buildEntryTB i entry)
-  
+
 
 buildEntryTB :: Info -> EntryTB -> Html
 buildEntryTB i (EntryTB bt bb)
@@ -53,9 +53,9 @@ buildEntrysBF i
 
 
 buildBlockEntryBF :: Info -> Block EntryBF -> Html
-buildBlockEntryBF i (b @ (Block _ _ entry))
+buildBlockEntryBF i (b@(Block _ _ entry))
   = buildDiv i "entry" b (buildEntryBF i entry)
-    
+
 
 buildEntryBF :: Info -> EntryBF -> Html
 buildEntryBF i (EntryBF bb bf)
@@ -69,7 +69,7 @@ buildEntrysTBF i
 
 
 buildBlockEntryTBF :: Info -> Block EntryTBF -> Html
-buildBlockEntryTBF i (b @ (Block _ _ entry))
+buildBlockEntryTBF i (b@(Block _ _ entry))
   = buildDiv i "entry" b (buildEntryTBF i entry)
 
 
@@ -83,7 +83,7 @@ buildEntryTBF i (EntryTBF bt bb bf)
 
 
 buildBlockTitle :: Info -> Block Title -> Html
-buildBlockTitle i (b @ (Block _ _ title)) 
+buildBlockTitle i (b@(Block _ _ title))
   = buildDiv i "title" b (buildTitle i title)
 
 
@@ -95,12 +95,12 @@ buildTitle i title
 
 
 buildBlockBody :: Info -> Block Body -> Html
-buildBlockBody i (b @ (Block _ _ body))
+buildBlockBody i (b@(Block _ _ body))
   = buildDiv i "body" b (buildPassages i body)
 
 
 buildBlockFigure :: Info -> Block Figure -> Html
-buildBlockFigure i (b @ (Block _ _ figure))
+buildBlockFigure i (b@(Block _ _ figure))
   = buildDiv i "figure" b (buildFigure i figure)
 
 
@@ -113,5 +113,3 @@ buildFigure i (FiTable bt)
   = bt
     $> unpackBlock
     $> buildTable i
-
-

@@ -25,7 +25,7 @@ buildGroups i groups
 
 
 buildBlockGroup :: Info -> Block Group -> Tex
-buildBlockGroup i (b @ (Block _ _ group))
+buildBlockGroup i (b@(Block _ _ group))
    = buildBlock i b (buildGroup i group)
 
 
@@ -50,5 +50,3 @@ buildGroup i (Group gt layouts)
                     bs, "end{longfbox}", pnl]
        Nothing
          -> error "Unknown group type."
-
-

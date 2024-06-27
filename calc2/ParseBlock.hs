@@ -53,7 +53,7 @@ verifyNoHints _ (HiNone, HiNone)
 verifyNoHints n _
   = throw (ExceptLineMessage n
            "vspace and pagebreak hints are not allowed.")
-            
+
 
 parseBeginEndHints :: BeginEndArgs -> Excepted (Hint, Hint)
 parseBeginEndHints (maybeTokensBefore, maybeTokensAfter)
@@ -80,12 +80,12 @@ decideTheHint hints
 decideTheHint' :: [Hint] -> Hint
 decideTheHint' []
   = HiNone
-decideTheHint' (hint @ (HiSpace  _) : _)
+decideTheHint' (hint@(HiSpace  _) : _)
   = hint
 decideTheHint' (_ : rest)
   = decideTheHint' rest
 
-                  
+
 parseHints :: [Token] -> Excepted [Hint]
 parseHints []
   = return []
@@ -122,4 +122,3 @@ parseHint' (TnWord n "vspace" : rest)
          -> throw (ExceptLineMessage n "Could not parse vspace argument.")
 parseHint' _
   = return HiNone
-

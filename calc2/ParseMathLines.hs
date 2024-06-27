@@ -50,7 +50,7 @@ grabMathParens _
 breakMathParens :: String -> [Token] -> [Token] -> Grabbed [Token]
 breakMathParens _ _ []
   = throw ExceptNoEndOfParens
-breakMathParens close acc ((t @ (TnCommand _ bt)) : ts)
+breakMathParens close acc ((t@(TnCommand _ bt)) : ts)
   = if close == bt
     then return (Grabbed (reverse acc) ts)
     else breakMathParens close (t : acc) ts
@@ -150,4 +150,3 @@ parseMathRight n _ (TnSymbol _ '&' : _)
            "Math Lines: each column must include a unique alignment character, &.")
 parseMathRight n acc (t : ts)
   = parseMathRight n (t : acc) ts
-  
