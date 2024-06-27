@@ -32,7 +32,7 @@ domain info
        RunWebRebuild
          -> "/ct/"
        RunWebPublish
-         -> "https://calculustyped.taylorhummon.com/"
+         -> "https://calculustyped.taylorhummon.com/book/"
 
 
 urlLanding :: Info -> Maybe Url
@@ -45,7 +45,7 @@ urlLanding info
        RunWebRebuild
          -> Nothing
        RunWebPublish
-         -> Just "https://www.taylorhummon.com/book/"
+         -> Just "https://calculustyped.taylorhummon.com/"
 
 
 urlStyleSheet :: Info -> Url
